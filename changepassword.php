@@ -1,8 +1,10 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <?php
 session_start();   
-// This project is made by sumit suthar 9929496321
+
  require("dbconnect.php")?>
  
 
@@ -23,7 +25,7 @@ session_start();
     <div id="menu_tab">
       <div class="left_menu_corner"></div>
        <ul class="menu">
-        <li><a href="index.php" class="nav1"> Home</a></li>
+         <li><a href="index.php" class="nav1"> Home</a></li>
         <li class="divider"></li>
 	   <li><a href="login.php" class="nav2">Login</a></li>
         <li class="divider"></li>
@@ -44,16 +46,17 @@ session_start();
         <div class="center_prod_box_big">
           <div class="register_form">
             <div class="form_row">
-			<form method="POST" action="admin.php">
+			<form method="POST" action="adminpassword.php">
               <label class="register"><strong>Admin:</strong></label>
               <input type="text" name="admin_name" required class="register_input" />
             </div>
-            <div class="form_row">
-              <label class="register"><strong>Password:</strong></label>
-              <input type="password" name="password" required class="register_input" />
+
+			<div class="form_row">
+              <label class="register"><strong>New Password:</strong></label>
+              <input type="password" name="newpassword" required class="register_input" />
             </div>
             <div class="form_row"> 
-			<button id="submit" type="submit" value="login">Login</button>
+			<button id="submit" type="submit"name="submit" value="change password">Change password</button>
 		  </div>
 		  </form>
 		        </div>
@@ -64,25 +67,24 @@ session_start();
     <!-- end of center content -->
   </div>
   <?php 
-  
+  // This project is made by sumit suthar 9929496321
  require("dbconnect.php");
-if (isset($_POST['admin_name']) and isset($_POST['password']))
+if (isset($_POST['submit']))
 {
 $admin_name = $_POST['admin_name'];
-$password = $_POST['password'];
-$query = "SELECT * FROM admin WHERE admin_name='$admin_name' and password='$password'";
-$result = mysql_query($query) or die(mysql_error());
-$count = mysql_num_rows($result);
+$newpassword = $_POST['newpassword'];
+$query ="UPDATE admin SET password='$newpassword' WHERE admin_name='$admin_name'";
+$result = mysql_query($query);
+$count = mysql_affected_rows($result);
 if ($count == 1)
-{	$_SESSION['admin']=$admin_name;
-	header('Location:adminmenu.php');
+{	
+	header('Location:admin1.php');
 }
 else
 {
 	header('Location:error.php');
 }
 }
-
 ?>
   <!-- end of main content -->
   <div class="footer">

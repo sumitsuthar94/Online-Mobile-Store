@@ -1,0 +1,155 @@
+
+.headline{text-align:center;margin:20px 0 75px}
+.headline h1{display:inline-block;border-bottom:1px solid #d0d0d0;line-height:40px;font-weight:300;text-transform:uppercase;margin:0 -3px;padding:0 12px}
+.headline h1 {color:#e33000;padding:0}
+
+
+*{
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+}
+body{
+  padding:0;
+  margin:0;
+  background: #FFF;
+  font-size:62.5%;
+  font-family: 'Open Sans', sans-serif;
+}
+img{
+  max-width: 100%;
+}
+#wrap{
+  width:90%;
+  margin:20px auto;
+}
+#accordian{
+  width:100%;
+}
+#accordian .step{
+  width:100%;
+  height:63px;
+  background:#00BFFF;
+  color:#FFF;
+  padding-left:1%;
+  padding-top:5px;
+  border-bottom:3px solid #d9d9d9;
+  border-radius:2px;
+  float:left;
+}
+#accordian .title{
+  float:left;
+  width:80%;
+  height:50px;
+  margin-left:1%;
+  font-size:1em;
+  font-weight:300;
+}
+#accordian .title h1{
+  font-size:2em;
+  font-weight:400;
+  margin-top:10px;
+
+}
+#accordian .content{
+  padding:2em 2em;
+  width:100%;
+  margin:0 auto;
+  background:#FFF;
+  height:auto;
+  display:block;
+  float:left;
+}
+#accordian .left,
+#accordian .right{
+  width:50%;
+  float:left;
+}
+#accordian #reviewed{
+  padding-left:1em;
+}
+#accordian .totals{
+  width:100%;
+  float:left;
+  border-bottom:3px solid #aaa;
+}
+#accordian .totals .subtitle{
+  font-size:2em;
+  display:block;
+  text-align: right;
+  color:#aaa;
+  width:95%;
+  margin-right:5%;
+}
+#accordian .totals .subtitle .sub_price{
+  font-style:italic;
+  width:100px;
+}
+#accordian .final{
+  width:100%;
+  float:left;
+  font-size:2.2em;
+  text-align: right;
+  color:#888;
+}
+#accordian .final .title{
+  width:95%;
+  margin-right:5%;
+  font-weight:bold;
+}
+#accordian #reviewed .title{
+  width:49%;
+  font-size:1.8em;
+  float:left;
+}
+#accordian #reviewed .billing,
+#accordian #reviewed .shipping{
+  width:100%;
+  float:left;
+  margin-bottom:5px;
+}
+#accordian #reviewed .billing .address_reviewed,
+#accordian #reviewed .shipping .address_reviewed,
+#accordian #reviewed .payment .payment_reviewed{
+  color:#aaa;
+  font-size:1.2em;
+  height:80px;
+  width:50%;
+  float:left;
+}
+#accordian #reviewed .billing .address_reviewed span,
+#accordian #reviewed .shipping .address_reviewed span,
+#accordian #reviewed .payment .payment_reviewed span{
+  display:block;
+}
+#accordian #reviewed #complete{
+  float:left;
+  width:100%;
+  padding-top:5px;
+  border-top:1px dotted #aaa;
+}
+#accordian #reviewed .big_button{
+  clear:both;
+  display:block;
+  width:70%;
+  margin:0 auto;
+  padding-top:15px;
+  padding-bottom:10px;
+  color:#fff;
+  font-size:2em;
+  text-decoration: none;
+  background:#00BFFF;
+  text-align:center;
+  border-bottom: 3px solid #4da7ff;
+  border-radius: 2px;
+}
+
+#accordian #reviewed #complete .sub{
+  color:#aaa;
+  display:block;
+  text-align:center;
+  margin-top:15px;
+  width:80%;
+  margin:5px auto;
+}
+

@@ -1,31 +1,23 @@
-<?php 
-require("dbconnect.php"); 
-session_start();
-if(!isset($_SESSION['cart']))
-{
-$_SESSION['total']=0;
-$_SESSION['q']=0;
-}
- ?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-<title>mobile Store</title>
+<?php require("dbconnect.php");
+session_start();?>
+<title>Details</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
 <div id="main_container">
   <div id="header">
     <div class="oferte_content">
-      <div class="top_divider"><img src="images/header_divider.png"  width="1" height="164" /></div>
+	
+      <div class="top_divider"><img src="images/header_divider.png" alt="" width="1" height="164" /></div>
     </div>
   </div>
   <div id="main_content">
     <div id="menu_tab">
       <div class="left_menu_corner"></div>
-      <ul class="menu">
-        <li><a href="index.php" class="nav1"> Home</a></li>
+       <ul class="menu">
+       <li><a href="index.php" class="nav1"> Home</a></li>
         <li class="divider"></li>
 	   <li><a href="login.php" class="nav2">Login</a></li>
         <li class="divider"></li>
@@ -35,19 +27,12 @@ $_SESSION['q']=0;
         <li class="divider"></li>
         <li><a href="logout.php" class="nav4">Logout</a></li>
 		<li class="divider"></li>
-		<li><font size="2px" font color="#FFA07A"><p align="right" >
-		<?php
-   if (isset($_SESSION['login_user']))
-{
-echo "Welcome ";
-echo $_SESSION['login_user'];
-}
-   ?></p></font></li>
       </ul>
       <div class="right_menu_corner"></div>
     </div>
     <!-- end of menu tab -->
-    <?php
+ <?php
+ // This project is made by sumit suthar 9929496321
     echo"<div class=\"left_content\">
       <div class=\"title_box\">BRANDS</div>
       <ul class=\"left_menu\">
@@ -65,34 +50,37 @@ echo $_SESSION['login_user'];
     </div>";
 	?>
     <!-- end of left content -->
-    <div class="center_content">
-      <div class="center_title_bar">Latest Products</div>
-       <?php
-	   // This project is made by sumit suthar 9929496321
-	  $query="SELECT *FROM brand WHERE 1 order by rand() limit 9";
-	  $result=mysql_query($query);
-	  if($result && mysql_num_rows($result)>0)
-	  {
-		while( $row = mysql_fetch_array($result))
-		{
-		echo "<div class=\"prod_box\">
-        <div class=\"top_prod_box\"></div>
-        <div class=\"center_prod_box\">
-          <div class=\"product_title\"><a href='details.php?serial=".$row['serial']."'>{$row['mobname']}</a></div>
-          <div class=\"product_img\"><a href='details.php?serial=".$row['serial']."'><img src=\"images/{$row["image"]}\" border=\"0\" /></a></div>
-          <div class=\"prod_price\"><span class=\"price\">RS.{$row["price"]}</span></div>
+	<div class="center_content">
+	<?php
+	$serial=$_GET['serial'];
+	$query="SELECT * FROM brand WHERE serial=$serial";
+	$result=mysql_query($query);
+	if($result && mysql_num_rows($result)>0)
+	{
+	while($row=mysql_fetch_array($result))
+	{
+	echo "<div class=\"center_title_bar\">{$row["mobname"]}</div>
+      <div class=\"prod_box_big\">
+        <div class=\"top_prod_box_big\"></div>
+        <div class=\"center_prod_box_big\">
+          <div class=\"product_img_big\"> <a><img src=\"images/{$row["image"]}\" border=\"0\" /></a>
+            </div>
+          <div class=\"details_big_box\">
+            <div class=\"product_title_big\">{$row["mobname"]}</div>
+            <div class=\"specifications\"> Available: <span class=\"blue\">{$row["available"]}</span><br />
+			Warranty: <span class=\"blue\">{$row["warranty"]}</span><br />
+			Cash on delivery: <span class=\"blue\">Available</span><br />
+            </div>
+            <div class=\"prod_price_big\"><span class=\"price\">RS.{$row["price"]}</span></div>
+           <a href='cart.php?serial=".$row['serial']." &action=add' class=\"addtocart\">add to cart</a></div>
         </div>
-        <div class=\"bottom_prod_box\"></div>
-        <div class=\"prod_details_tab\"> <a href='cart.php?serial=".$row['serial']." &action=add 'title=\"header=[Add to cart] body=[&nbsp;] fade=[on]\"><img src=\"images/cart.gif\" border=\"0\" class=\"left_bt\" /></a> 
-		<a href='details.php?serial=".$row['serial']."' class=\"prod_details\">details</a> </div>
+        <div class=\"bottom_prod_box_big\"></div>
       </div>";
-		
-		}
 	  }
-	  
-		
+	  }
 	  ?>
-	  </div>
+
+</div>
     <!-- end of center content -->
     <div class="right_content">
       <div class="shopping_cart">
@@ -104,11 +92,11 @@ echo $_SESSION['login_user'];
       
     </div>
     <!-- end of right content -->
-  </div>
+</div>
   <!-- end of main content -->
   <div class="footer">
    </div>
 <!-- end of main_container -->
-
-  </body>
-  </html>
+</div>
+</body>
+</html>

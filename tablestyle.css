@@ -1,0 +1,84 @@
+table {
+  font-family: "Helvetica Neue", Helvetica, sans-serif
+}
+
+
+thead {
+  background: SteelBlue;
+  color: #FFFFF0;
+}
+
+th,
+td {
+  padding: 5px 10px;
+  font-size:15px;
+  text-align:center;
+}
+
+tbody tr:nth-child(even) {
+  background: grey;
+}
+
+tbody tr td:nth-child(2) {
+  text-align:center;
+}
+
+tbody tr td:nth-child(3),
+tbody tr td:nth-child(4) {
+  text-align: center;
+  font-family: monospace;
+}
+
+tfoot {
+  background: SeaGreen;
+  color: white;
+  text-align: right;
+}
+
+tfoot tr th:last-child {
+  font-family: monospace;
+}
+
+#sumit9929496321{ 
+	background: url("../images/submit_bg.gif") repeat-x scroll 0 0 transparent; 
+	border: 1px solid #B7D6DF; 
+	border-radius: 2px 2px 2px 2px; 
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+	color: #437182; 
+	cursor: pointer; 
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; 
+	font-size: 14px;
+	font-weight: bold; 
+	height: 30px; 
+	padding: 6px 10px; 
+	text-shadow: 0 1px 0 #FFFFFF; 
+	width: 150px; 
+	text-decoration:none;
+}
+#sumit9929496321:hover { 
+	background: url("../images/submit_hover_bg.gif") repeat-x scroll 0 0 transparent; 
+	border: 2px solid #DEB887; 
+	cursor: pointer; 
+}
+
+#sumit_suthar { 
+	background: url("../images/submit_bg.gif") repeat-x scroll 0 0 transparent; 
+	border: 1px solid #B7D6DF; 
+	border-radius: 2px 2px 2px 2px; 
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+	color: #437182; 
+	cursor: pointer; 
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; 
+	font-size: 13px;
+	font-weight: bold; 
+	height: 10px; 
+	padding: 6px 10px; 
+	text-shadow: 0 1px 0 #FFFFFF; 
+	width: 150px; 
+	text-decoration:none;
+}
+#sumit_suthar:hover { 
+	background: url("../images/submit_hover_bg.gif") repeat-x scroll 0 0 transparent; 
+	border:2px solid #DEB887; 
+	cursor: pointer; 
+}
